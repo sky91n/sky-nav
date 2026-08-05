@@ -3,163 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sky小能手</title>
+    <title>sky小能手 ✨</title>
     <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     }
-    
-    /* 页面淡入动画 */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
     }
-    
+    @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+    }
+    @keyframes bounceIn {
+        0% { opacity: 0; transform: scale(0.3) translateY(30px); }
+        50% { transform: scale(1.05); }
+        70% { transform: scale(0.9); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @keyframes sparkle {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
     body {
-        background-color: #000;
-        background-image: url("bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 60px 20px;
+        padding: 50px 20px;
         position: relative;
+        overflow-x: hidden;
+        background: linear-gradient(-45deg, #ffecd2, #fcb69f, #a8edea, #fed6e3, #d299c2, #fef9d7);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
     }
-    
-    /* 背景渐变遮罩，提升质感 */
-    body::before {
-        content: '';
+    .deco {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.2) 50%,
-            rgba(0, 0, 0, 0.35) 100%
-        );
+        pointer-events: none;
         z-index: 0;
+        opacity: 0.6;
     }
-    
+    .deco-1 {
+        top: 10%;
+        left: 8%;
+        font-size: 40px;
+        animation: float 4s ease-in-out infinite;
+    }
+    .deco-2 {
+        top: 20%;
+        right: 10%;
+        font-size: 35px;
+        animation: floatSlow 5s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+    .deco-3 {
+        bottom: 15%;
+        left: 12%;
+        font-size: 45px;
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    .deco-4 {
+        bottom: 25%;
+        right: 8%;
+        font-size: 38px;
+        animation: floatSlow 4.5s ease-in-out infinite;
+        animation-delay: 1.5s;
+    }
+    .deco-5 {
+        top: 50%;
+        left: 5%;
+        font-size: 30px;
+        animation: sparkle 3s ease-in-out infinite;
+    }
+    .deco-6 {
+        top: 40%;
+        right: 6%;
+        font-size: 32px;
+        animation: sparkle 2.5s ease-in-out infinite;
+        animation-delay: 1s;
+    }
     .nav-card {
         width: 100%;
-        max-width: 380px;
+        max-width: 400px;
         position: relative;
         z-index: 1;
-        animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-    
-    .page-title {
+    .header {
         text-align: center;
-        font-size: 22px;
-        font-weight: 600;
-        color: #fff;
-        letter-spacing: 0.5px;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         margin-bottom: 36px;
     }
-    
-    .link-group {
-        margin-bottom: 24px;
-    }
-    
-    .link-item {
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 40px;
+        box-shadow: 0 8px 25px rgba(255, 154, 158, 0.4);
+        animation: float 3s ease-in-out infinite;
+    }
+    .page-title {
+        font-size: 26px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+    .subtitle {
+        font-size: 13px;
+        color: rgba(102, 126, 234, 0.7);
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+    .link-group {
+        margin-bottom: 20px;
+    }
+    .link-item {
+        display: flex;
+        align-items: center;
         width: 100%;
-        padding: 16px 20px;
+        padding: 18px 24px;
         margin-bottom: 14px;
-        /* 高级黑色毛玻璃 */
-        background: rgba(0, 0, 0, 0.22);
+        background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        color: rgba(255, 255, 255, 0.95);
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        border: 1.5px solid rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        color: #5a5a8a;
         text-decoration: none;
         font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
     }
-    
+    .link-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: left 0.5s;
+    }
+    .link-item:hover::before {
+        left: 100%;
+    }
+    .link-icon {
+        font-size: 22px;
+        margin-right: 14px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    .link-text {
+        flex: 1;
+    }
+    .link-arrow {
+        font-size: 14px;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+    .link-item:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+        background: rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 1);
+    }
+    .link-item:hover .link-icon {
+        transform: scale(1.2) rotate(-5deg);
+    }
+    .link-item:hover .link-arrow {
+        opacity: 1;
+        transform: translateX(3px);
+    }
+    .link-item:active {
+        transform: translateY(-1px) scale(0.98);
+    }
     .link-item:last-child {
         margin-bottom: 0;
     }
-    
-    .link-item:hover {
-        background: rgba(0, 0, 0, 0.35);
-        transform: translateY(-2px) scale(1.01);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        border-color: rgba(255, 255, 255, 0.15);
-    }
-    
-    .link-item:active {
-        transform: translateY(0) scale(0.99);
-    }
-    
     .divider {
-        height: 1px;
-        background: rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 32px 0;
+        gap: 12px;
     }
-    
+    .divider-line {
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+        border-radius: 2px;
+    }
+    .divider-icon {
+        font-size: 18px;
+        animation: sparkle 2s ease-in-out infinite;
+    }
     .section-title {
         text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 2px;
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(102, 126, 234, 0.8);
+        letter-spacing: 3px;
         text-transform: uppercase;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-        margin-bottom: 24px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
-</style>
+    .section-title::before,
+    .section-title::after {
+        content: '✦';
+        font-size: 10px;
+        opacity: 0.5;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 36px;
+        font-size: 12px;
+        color: rgba(102, 126, 234, 0.5);
+        letter-spacing: 1px;
+    }
+    .footer-hearts {
+        margin-top: 8px;
+        font-size: 14px;
+        animation: sparkle 1.5s ease-in-out infinite;
+    }
+    @media (max-width: 480px) {
+        body {
+            padding: 30px 16px;
+        }
+        .nav-card {
+            max-width: 100%;
+        }
+        .page-title {
+            font-size: 22px;
+        }
+        .link-item {
+            padding: 16px 20px;
+            font-size: 14px;
+        }
+        .link-icon {
+            font-size: 20px;
+        }
+    }
+    </style>
 </head>
 <body>
+    <div class="deco deco-1">🌸</div>
+    <div class="deco deco-2">⭐</div>
+    <div class="deco deco-3">☁️</div>
+    <div class="deco deco-4">🌙</div>
+    <div class="deco deco-5">✨</div>
+    <div class="deco deco-6">💫</div>
     <div class="nav-card">
-        <!-- 顶部主标题，可自行修改文字 -->
-        <h1 class="page-title">下载链接</h1>
-
-        <!-- 主链接区 -->
-        <div class="link-group">
-            <a href="https://pan.baidu.com/s/1aenC-FArXXA8XaVO0Ry6EA?pwd=8888" class="link-item">百度网盘</a>
-            <a href="https://yun.139.com/shareweb/#/w/i/2wFGUnfi8s000" class="link-item">中国移动云盘</a>
-            <a href="https://pan.quark.cn/s/8e27081b39b4" class="link-item">夸克网盘</a>
+        <div class="header">
+            <div class="avatar">🐰</div>
+            <h1 class="page-title">sky小能手</h1>
+            <p class="subtitle">～ 欢迎光临 ～</p>
         </div>
-
-        <div class="divider"></div>
-
-        <!-- 中间可修改文本，居中显示 -->
-        <div class="section-title">教程区</div>
-
-        <!-- 次级链接区，样式与主链接完全一致 -->
         <div class="link-group">
-            <a href="https://share.weiyun.com/iSFmQcgt" class="link-item">插件版教程</a>
-            <a href="https://share.weiyun.com/72FO50ke" class="link-item">直装版教程</a>
-            <a href="https://share.weiyun.com/bVU45MYp" class="link-item">模拟器教程</a>
-            <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=RLyBbCqc7TWpFRhioYHUWY1ZrStaa4iTD%2B1%2F6ksWtWFeU%2FU4sFF31fDJrmxZx71o&busi_data=eyJncm91cENvZGUiOiIxMDQ3MTE1MTEzIiwidG9rZW4iOiJmeXpRSEw2Yy8xN3JOeFM5MjFjZ2dEWUc5bTRoQ0w2ZnROZ29YUy9mRm5CeHFvNjZ6bnRSQzF2UjNNaTVOdVltIiwidWluIjoiNjEzMjI1MzAifQ%3D%3D&data=Jhnvib3qHlcyKWqv7POQiiOOX3cdSMgTJtRQ4Amt8g7HVPneJ8q0x2JUEtdIwzC08DWaJn_shUYJZVrbXW9wBA&svctype=4&tempid=h5_group_info" class="link-item">QQ群</a>
-            <a href="https://pd.qq.com/s/39ce7dkyq?b=9" class="link-item">QQ频道</a>
-            <a href="http://mlink.cc/sky91n" class="link-item">备用链接</a>
-            
+            <a href="https://pan.baidu.com/s/1aenC-FArXXA8XaVO0Ry6EA?pwd=8888" class="link-item">
+                <span class="link-icon">📦</span>
+                <span class="link-text">百度网盘</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://yun.139.com/shareweb/#/w/i/2wFGUnfi8s000" class="link-item">
+                <span class="link-icon">📱</span>
+                <span class="link-text">中国移动云盘</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://pan.quark.cn/s/8e27081b39b4" class="link-item">
+                <span class="link-icon">🚀</span>
+                <span class="link-text">夸克网盘</span>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+        <div class="divider">
+            <div class="divider-line"></div>
+            <span class="divider-icon">🌟</span>
+            <div class="divider-line"></div>
+        </div>
+        <div class="section-title">教程专区</div>
+        <div class="link-group">
+            <a href="https://share.weiyun.com/iSFmQcgt" class="link-item">
+                <span class="link-icon">🔌</span>
+                <span class="link-text">插件版教程</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://share.weiyun.com/72FO50ke" class="link-item">
+                <span class="link-icon">📲</span>
+                <span class="link-text">直装版教程</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://share.weiyun.com/bVU45MYp" class="link-item">
+                <span class="link-icon">🎮</span>
+                <span class="link-text">模拟器教程</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=RLyBbCqc7TWpFRhioYHUWY1ZrStaa4iTD%2B1%2F6ksWtWFeU%2FU4sFF31fDJrmxZx71o&busi_data=eyJncm91cENvZGUiOiIxMDQ3MTE1MTEzIiwidG9rZW4iOiJmeXpRSEw2Yy8xN3JOeFM5MjFjZ2dEWUc5bTRoQ0w2ZnROZ29YUy9mRm5CeHFvNjZ6bnRSQzF2UjNNaTVOdVltIiwidWluIjoiNjEzMjI1MzAifQ%3D%3D&data=Jhnvib3qHlcyKWqv7POQiiOOX3cdSMgTJtRQ4Amt8g7HVPneJ8q0x2JUEtdIwzC08DWaJn_shUYJZVrbXW9wBA&svctype=4&tempid=h5_group_info" class="link-item">
+                <span class="link-icon">💬</span>
+                <span class="link-text">QQ群</span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a href="https://pd.qq.com/s/39ce7dkyq?b=9" class="link-item">
+                <span class="link-icon">📢</span>
+                <span class="link-text">QQ频道</span>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+        <div class="footer">
+            Made with 💖 by sky
+            <div class="footer-hearts">💕 ✨ 🌸</div>
         </div>
     </div>
 </body>
