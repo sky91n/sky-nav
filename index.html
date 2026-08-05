@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sky小能手</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    }
+    body {
+        background-color: #f5f6f7;
+        /* 新增：背景图样式 */
+        background-image: url("https://cy-pic.kuaizhan.com/g3/19/2d/623c-2b21-44a4-8ce0-6025ca13adfa89.jpg?cysign=af7b8576e015dabf006a2899f2cf1837u0026cyt=1785938136");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 40px 16px;
+    }
+    .nav-card {
+        width: 100%;
+        max-width: 420px;
+        /* 修改：半透明+毛玻璃效果，替换原来的纯白背景 */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        padding: 32px 24px;
+    }
+    .page-title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 28px;
+    }
+    .link-group {
+        margin-bottom: 20px;
+    }
+    .link-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+        background: #f7f8fa;
+        border-radius: 10px;
+        color: #333;
+        text-decoration: none;
+        font-size: 15px;
+        transition: background-color 0.2s ease;
+    }
+    .link-item:last-child {
+        margin-bottom: 0;
+    }
+    .link-item:hover {
+        background: #eef0f3;
+    }
+    .divider {
+        height: 1px;
+        background: #eee;
+        margin: 24px 0;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="nav-card">
+        <!-- 顶部主标题，可自行修改文字 -->
+        <h1 class="page-title">下载链接</h1>
+
+        <!-- 主链接区 -->
+        <div class="link-group">
+            <a href="https://pan.baidu.com/s/1aenC-FArXXA8XaVO0Ry6EA?pwd=8888" class="link-item">百度网盘</a>
+            <a href="https://yun.139.com/shareweb/#/w/i/2wFGUnfi8s000" class="link-item">中国移动云盘</a>
+            <a href="https://pan.quark.cn/s/8e27081b39b4" class="link-item">夸克网盘</a>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 中间可修改文本，居中显示 -->
+        <div class="section-title">教程区</div>
+
+        <!-- 次级链接区，样式与主链接完全一致 -->
+        <div class="link-group">
+            <a href="https://share.weiyun.com/iSFmQcgt" class="link-item">插件版教程</a>
+            <a href="https://share.weiyun.com/72FO50ke" class="link-item">直装版教程</a>
+            <a href="https://share.weiyun.com/bVU45MYp" class="link-item">模拟器教程</a>
+            <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=RLyBbCqc7TWpFRhioYHUWY1ZrStaa4iTD%2B1%2F6ksWtWFeU%2FU4sFF31fDJrmxZx71o&busi_data=eyJncm91cENvZGUiOiIxMDQ3MTE1MTEzIiwidG9rZW4iOiJmeXpRSEw2Yy8xN3JOeFM5MjFjZ2dEWUc5bTRoQ0w2ZnROZ29YUy9mRm5CeHFvNjZ6bnRSQzF2UjNNaTVOdVltIiwidWluIjoiNjEzMjI1MzAifQ%3D%3D&data=Jhnvib3qHlcyKWqv7POQiiOOX3cdSMgTJtRQ4Amt8g7HVPneJ8q0x2JUEtdIwzC08DWaJn_shUYJZVrbXW9wBA&svctype=4&tempid=h5_group_info" class="link-item">QQ群</a>
+            <a href="https://pd.qq.com/s/39ce7dkyq?b=9" class="link-item">QQ频道</a>
+            <a href="http://mlink.cc/sky91n" class="link-item">备用链接</a>
+            
+        </div>
+    </div>
+</body>
+</html>
