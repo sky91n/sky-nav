@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dce8ea">
+  <meta name="description" content="sky小能手的云端导航：夸克网盘、移动云盘、百度网盘与使用教程。">
+  <meta property="og:title" content="sky小能手 · 云端导航">
+  <meta property="og:description" content="云端收藏，一次抵达。">
+  <meta property="og:type" content="website">
+  <title>sky小能手 · 云端导航</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/bg.jpg" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop-photo"></div>
+    <div class="backdrop-haze"></div>
+    <div class="pointer-light"></div>
+    <canvas id="cloudDust"></canvas>
+    <div class="film-grain"></div>
+  </div>
+
+  <main class="page">
+    <header class="profile reveal">
+      <div class="avatar-wrap">
+        <span class="avatar-ring"></span>
+        <img class="avatar" src="assets/avatar.jpg" width="88" height="88" alt="sky小能手头像">
+      </div>
+      <h1>sky小能手</h1>
+      <div class="handle-row">
+        <a class="handle" href="https://link3.cc/sky91n" target="_blank" rel="noopener noreferrer">
+          <span class="status-dot" aria-hidden="true"></span>
+          link3.cc/sky91n
+        </a>
+        <button class="share-button" id="shareButton" type="button" aria-label="复制当前网址" title="复制当前网址">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="18" cy="5" r="2.5"></circle>
+            <circle cx="6" cy="12" r="2.5"></circle>
+            <circle cx="18" cy="19" r="2.5"></circle>
+            <path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="link-section reveal" aria-labelledby="download-title">
+      <div class="section-heading">
+        <span class="section-kicker">CLOUD LINKS</span>
+        <h2 id="download-title">下载链接</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+
+      <nav class="link-list" aria-label="网盘下载入口">
+        <a class="link-item" href="https://pan.quark.cn/s/7054c860beb5" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon" aria-hidden="true">
+            <img src="assets/quark-icon.jpg" width="31" height="31" alt="">
+          </span>
+          <span class="link-copy">
+            <strong>夸克网盘</strong>
+            <small>sky91n 分享 · 极速转存</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+
+        <a class="link-item" href="https://yun.139.com/shareweb/#/w/i/2xPCN2QPXbxfv" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon" aria-hidden="true">
+            <img src="assets/mobile-icon.jpg" width="31" height="31" alt="">
+          </span>
+          <span class="link-copy">
+            <strong>移动云盘</strong>
+            <small>中国移动 · 下载不限速</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+
+        <a class="link-item" href="https://pan.baidu.com/s/1bnYlbFb5pG962SL1vCk-fQ?pwd=8888" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon" aria-hidden="true">
+            <img src="assets/baidu-icon.jpg" width="31" height="31" alt="">
+          </span>
+          <span class="link-copy">
+            <strong>百度网盘</strong>
+            <small>提取码 8888</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+      </nav>
+    </section>
+
+    <div class="section-divider" aria-hidden="true">
+      <span></span><i></i><span></span>
+    </div>
+
+    <section class="link-section tutorial-section reveal" aria-labelledby="tutorial-title">
+      <div class="section-heading">
+        <span class="section-kicker">GUIDES &amp; MORE</span>
+        <h2 id="tutorial-title">教程与更多</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+
+      <nav class="link-list" aria-label="教程与其他入口">
+        <a class="link-item" href="https://www.yuque.com/skyxiaonengshou/glnknn?#" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon icon-note" aria-hidden="true">
+            <img src="assets/xiaohongshu.png" width="32" height="32" alt="">
+          </span>
+          <span class="link-copy">
+            <strong>教程合集</strong>
+            <small>使用前先看这里</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+
+        <button class="link-item" type="button" data-video-title="插件版教程" data-video-src="https://tencentcdna.production.link3.cc/files/upload_video/link3_1696078646213/uploadvideo_1790369965728.mp4" aria-haspopup="dialog">
+          <span class="service-icon icon-video" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="5" y="7" width="22" height="18" rx="5"></rect>
+              <path d="m14 12 6 4-6 4v-8Z"></path>
+            </svg>
+          </span>
+          <span class="link-copy">
+            <strong>插件版</strong>
+            <small>视频教程</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </button>
+
+        <button class="link-item" type="button" data-video-title="直装版教程" data-video-src="https://tencentcdna.production.link3.cc/files/upload_video/link3_1696078646213/uploadvideo_1790369984422.mp4" aria-haspopup="dialog">
+          <span class="service-icon icon-video" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="5" y="7" width="22" height="18" rx="5"></rect>
+              <path d="m14 12 6 4-6 4v-8Z"></path>
+            </svg>
+          </span>
+          <span class="link-copy">
+            <strong>直装版</strong>
+            <small>视频教程</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </button>
+
+        <button class="link-item" type="button" data-video-title="模拟器教程" data-video-src="https://tencentcdna.production.link3.cc/files/upload_video/link3_1696078646213/uploadvideo_1790370008602.mp4" aria-haspopup="dialog">
+          <span class="service-icon icon-video" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="5" y="7" width="22" height="18" rx="5"></rect>
+              <path d="m14 12 6 4-6 4v-8Z"></path>
+            </svg>
+          </span>
+          <span class="link-copy">
+            <strong>模拟器</strong>
+            <small>视频教程</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </button>
+
+        <a class="link-item" href="https://pd.qq.com/s/arhnm6quu?b=9" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon icon-channel" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M7.5 8.2h17a2.5 2.5 0 0 1 2.5 2.5v9.1a2.5 2.5 0 0 1-2.5 2.5H15l-6.2 4v-4H7.5a2.5 2.5 0 0 1-2.5-2.5v-9.1a2.5 2.5 0 0 1 2.5-2.5Z"></path>
+              <path d="M10 14h12M10 18h7"></path>
+            </svg>
+          </span>
+          <span class="link-copy">
+            <strong>QQ 频道</strong>
+            <small>最新动态与交流</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+
+        <a class="link-item" href="https://qun.qq.com/universal-share/share?ac=1&amp;authKey=wySWZ244QZm%2F%2FXXeY6VrdApVfy3Yc%2FcC6kpz2v6mAUTxEt0GmrX0DJmyY%2BQR6aA3&amp;busi_data=eyJncm91cENvZGUiOiIxMDQ3MTE1MTEzIiwidG9rZW4iOiJROFEyc05oQ0Z5WTA4MllGM3NLLytZeUg2RTFUTWNPM1dtMXBkVktsaGk1d3BGd3hPbUV6eGZUTVJRL0VWU2Q4IiwidWluIjoiMjkzMDYwOTI4MyJ9&amp;data=i8yNvOEAViSbnaOuFjVsj2ee9X4NzHQ5JQA9DhyV70XMaI_weGgOSI3kKxMwEXM92CinZGq8M2tZm6DWWPnGVg&amp;svctype=4&amp;tempid=h5_group_info" target="_blank" rel="noopener noreferrer">
+          <span class="service-icon icon-group" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="22" cy="13" r="3.2"></circle>
+              <path d="M4.8 25.2c.4-4 3-6.4 7.2-6.4s6.8 2.4 7.2 6.4M18.3 20c3.9-.7 6.8 1.2 8 4.5"></path>
+            </svg>
+          </span>
+          <span class="link-copy">
+            <strong>QQ 群</strong>
+            <small>加入交流群</small>
+          </span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"></path></svg>
+          </span>
+        </a>
+      </nav>
+    </section>
+
+    <footer class="footer reveal">
+      <span class="footer-mark" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M7.1 20.3h13.8a4.2 4.2 0 0 0 .4-8.4 7 7 0 0 0-12.9-.8 4.9 4.9 0 0 0-1.3 9.2Z"></path>
+        </svg>
+      </span>
+      <span>Made with 💖 by sky</span>
+      <span class="footer-dot" aria-hidden="true"></span>
+      <span>2026</span>
+    </footer>
+  </main>
+
+  <dialog class="video-dialog" id="videoDialog" aria-labelledby="videoTitle">
+    <div class="dialog-shell">
+      <div class="dialog-head">
+        <div>
+          <span class="dialog-kicker">VIDEO GUIDE</span>
+          <h2 id="videoTitle">视频教程</h2>
+        </div>
+        <button class="dialog-close" id="dialogClose" type="button" aria-label="关闭视频">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+      </div>
+      <video id="guideVideo" controls playsinline preload="none"></video>
+      <p class="dialog-hint">视频从原资源地址加载，关闭窗口后会自动停止播放。</p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
